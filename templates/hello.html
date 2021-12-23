@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="hello">
+        <p>Добро пожаловать!</p>
+        <p>Вы зашли на наш сервис</p>
+        <p>для  мониторинга фильмов</p>
+        <p>по рейтингу IMDB</p>
+    </div>
+    <form action="/main" target="_self">
+        <div >
+            <button class="btn">Посмотреть рейтинг</button>
+        </div>
+    </form>
+    <br>
+    <form action="/review" target="_self">
+        <div >
+            <button class="btn2">Оставить отзыв</button>
+        </div>
+    </form>
+{% endblock %}

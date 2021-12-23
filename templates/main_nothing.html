@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{{ url_for('search') }}" method="POST">
+        <div class="input_search_control">
+            <input id="number_one" type="text" name="search" placeholder="Введите критерий поиска">
+            <input id="button_search" type="submit" value="search">
+        </div>
+    </form>
+    <div><p class="txt">Ничего не найдено, попробуйте ещё раз!</p></div>
+    <div class="scroll_table">
+    <table class="films_table">
+        <thead>
+        <tr>
+            <th>Рейтинг</th>
+            <th>Название</th>
+            <th>Дата релиза</th>
+            <th>Режиссёр</th>
+        </tr>
+        </thead>
+    <tbody>
+        {% for table in table %}
+
+            <tr>
+                <td class="little_column">{{ table.rating }}</td>
+                <td>{{ table.name }}</td>
+                <td>{{ table.release_date }}</td>
+                <td>{{ table.director }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    </div>
+
+{% endblock %}
